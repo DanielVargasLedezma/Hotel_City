@@ -5,10 +5,10 @@
  */
 
 /* 
- * File:   Informacion.c
+ * File:   Habitacion.c
  * Author: Dani
  * 
- * Created on August 26, 2021, 5:25 PM
+ * Created on August 26, 2021, 5:20 PM
  */
 
-#include "Informacion.h"
+#include "../Headers/Habitacion.h"

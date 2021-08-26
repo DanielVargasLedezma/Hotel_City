@@ -15,11 +15,16 @@
 #define CONTENEDORA_H
 #include "Habitacion.h"
 
+Habitacion **habitaciones;
+
 typedef struct Contenedora{
    
     int row_count; //n
     int col_count;//m
-    Habitacion **habitaciones;
+    
     
 }Contenedora;
+
+extern Habitacion getHabit(int n, int m);
+
 #endif /* CONTENEDORA_H */

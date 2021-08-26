@@ -23,6 +23,7 @@ typedef struct Habitacion{
     Cliente *cliente;
     Informacion *informacion;
     int numCamas; //Random each time
+    
 }Habitacion;
 
 #endif /* HABITACION_H */

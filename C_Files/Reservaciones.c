@@ -5,10 +5,10 @@
  */
 
 /* 
- * File:   Habitacion.c
+ * File:   Reservaciones.c
  * Author: Dani
  * 
- * Created on August 26, 2021, 5:20 PM
+ * Created on August 26, 2021, 5:49 PM
  */
 
-#include "Habitacion.h"
+#include "../Headers/Reservaciones.h"

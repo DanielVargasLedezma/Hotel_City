@@ -35,11 +35,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Cliente.o \
-	${OBJECTDIR}/Contenedora.o \
-	${OBJECTDIR}/Habitacion.o \
-	${OBJECTDIR}/Informacion.o \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/C_Files/Cliente.o \
+	${OBJECTDIR}/C_Files/Contenedora.o \
+	${OBJECTDIR}/C_Files/Habitacion.o \
+	${OBJECTDIR}/C_Files/Informacion.o \
+	${OBJECTDIR}/C_Files/Reservaciones.o \
+	${OBJECTDIR}/C_Files/main.o
 
 
 # C Compiler Flags
@@ -66,30 +67,35 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Cliente.o: Cliente.c
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/C_Files/Cliente.o: C_Files/Cliente.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Cliente.o Cliente.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Cliente.o C_Files/Cliente.c
 
-${OBJECTDIR}/Contenedora.o: Contenedora.c
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/C_Files/Contenedora.o: C_Files/Contenedora.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Contenedora.o Contenedora.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Contenedora.o C_Files/Contenedora.c
 
-${OBJECTDIR}/Habitacion.o: Habitacion.c
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/C_Files/Habitacion.o: C_Files/Habitacion.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Habitacion.o Habitacion.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Habitacion.o C_Files/Habitacion.c
 
-${OBJECTDIR}/Informacion.o: Informacion.c
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/C_Files/Informacion.o: C_Files/Informacion.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Informacion.o Informacion.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Informacion.o C_Files/Informacion.c
 
-${OBJECTDIR}/main.o: main.c
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/C_Files/Reservaciones.o: C_Files/Reservaciones.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
-	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Reservaciones.o C_Files/Reservaciones.c
+
+${OBJECTDIR}/C_Files/main.o: C_Files/main.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/main.o C_Files/main.c
 
 # Subprojects
 .build-subprojects:

@@ -16,8 +16,10 @@
 
 typedef struct Informacion{
     
-    char *identificador;
-    char estado;
+    int numOfAdultos;
+    int numOfKids;
+    int numOfDays;
+    char typeOfInstance;
     
 }Informacion;
 

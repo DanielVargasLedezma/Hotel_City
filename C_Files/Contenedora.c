@@ -5,10 +5,15 @@
  */
 
 /* 
- * File:   Cliente.c
+ * File:   Contenedora.c
  * Author: Dani
  * 
- * Created on August 26, 2021, 5:25 PM
+ * Created on August 26, 2021, 5:18 PM
  */
 
-#include "Cliente.h"
+#include "../Headers/Contenedora.h"
+
+Habitacion getHabit(int n, int m){
+    
+    return (habitaciones[n][m]);
+}

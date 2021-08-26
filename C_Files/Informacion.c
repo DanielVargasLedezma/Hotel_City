@@ -5,10 +5,11 @@
  */
 
 /* 
- * File:   Contenedora.c
+ * File:   Informacion.c
  * Author: Dani
  * 
- * Created on August 26, 2021, 5:18 PM
+ * Created on August 26, 2021, 5:25 PM
  */
 
-#include "Contenedora.h"
+#include "../Headers/Informacion.h"
+

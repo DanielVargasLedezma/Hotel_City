@@ -5,20 +5,10 @@
  */
 
 /* 
- * File:   Cliente.h
+ * File:   Cliente.c
  * Author: Dani
- *
+ * 
  * Created on August 26, 2021, 5:25 PM
  */
 
-#ifndef CLIENTE_H
-#define CLIENTE_H
-
-typedef struct Cliente{
-    
-    char *identificador;
-    char estado;
-    
-}Cliente;
-
-#endif /* CLIENTE_H */
+#include "../Headers/Cliente.h"
