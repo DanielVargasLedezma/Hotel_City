@@ -35,6 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/Cliente.o \
+	${OBJECTDIR}/Contenedora.o \
+	${OBJECTDIR}/Habitacion.o \
+	${OBJECTDIR}/Informacion.o \
 	${OBJECTDIR}/main.o
 
 
@@ -61,6 +65,26 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/Cliente.o: Cliente.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Cliente.o Cliente.c
+
+${OBJECTDIR}/Contenedora.o: Contenedora.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Contenedora.o Contenedora.c
+
+${OBJECTDIR}/Habitacion.o: Habitacion.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Habitacion.o Habitacion.c
+
+${OBJECTDIR}/Informacion.o: Informacion.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Informacion.o Informacion.c
 
 ${OBJECTDIR}/main.o: main.c
 	${MKDIR} -p ${OBJECTDIR}
