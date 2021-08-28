@@ -20,7 +20,6 @@ typedef struct Cliente{
     int identificacion;
     int modoDePago;
     int numeroTelefono;
-    int cedula;
     
 }Cliente;
 
