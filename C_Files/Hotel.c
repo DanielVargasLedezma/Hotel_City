@@ -13,6 +13,7 @@
 
 #include "../Headers/Hotel.h"
 #include <time.h>
+#include <string.h>
 Contenedora *hotel;
 
 void iniciarHotelInterfaz(){
