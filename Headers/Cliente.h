@@ -16,7 +16,7 @@
 
 typedef struct Cliente{
     
-    char *nombreCliente;
+    char nombreCliente;
     int identificacion;
     int modoDePago;
     int numeroTelefono;
