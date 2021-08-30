@@ -19,10 +19,10 @@ void iniciarHotelInterfaz(){
     
     int n, m;
     printf("Digite el numero de pisos que desea que hotel tenga: ");
-    scanf("%d", m);
+    scanf("%d", &m);
     
     printf("Digite el numero de cuartos que desea que hotel tenga por piso: ");
-    scanf("%d", n);
+    scanf("%d", &n);
     
     iniciarHotel(n, m);
 }
