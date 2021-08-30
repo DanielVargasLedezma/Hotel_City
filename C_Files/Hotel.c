@@ -83,7 +83,7 @@ void printcamas(){
         for(int j=0;j<hotel->col_count;j++){
             numc=hotel->habitaciones[i][j].numCamas;
             printf("La habitacion %s",(hotel->habitaciones[i][j].identificador));
-            printf(" tiene las siguientes camas: %i",numc,hotel->habitaciones[i][j].clasificacion);
+            printf(" tiene las siguientes camas: %i",numc);
             printf(", Clasificacion: %s \n",(hotel->habitaciones[i][j].clasificacion));
         }
     }
