@@ -18,11 +18,10 @@
 #include "Contenedora.h"
 
 extern Contenedora *hotel;
-
+extern void inicializarCamas();
 extern void iniciarHotelInterfaz();
-
+extern void printcamas();
 extern void iniciarHotel(int n, int m);
-
 extern void liberarMemoria();
 
 #endif /* HOTEL_H */
