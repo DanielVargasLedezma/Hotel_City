@@ -22,7 +22,7 @@
 int main(int argc, char** argv) {
 
     iniciarHotelInterfaz();
-    
+
     liberarMemoria();
     
     return (EXIT_SUCCESS);

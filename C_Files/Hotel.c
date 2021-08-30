@@ -12,7 +12,7 @@
  */
 
 #include "../Headers/Hotel.h"
-
+#include <time.h>
 Contenedora *hotel;
 
 void iniciarHotelInterfaz(){
@@ -37,11 +37,39 @@ void iniciarHotel(int n, int m){
     (hotel->habitaciones) = malloc(n * sizeof(Habitacion *));
     
     for(int i =0; i < n; i++){
-        (hotel->habitaciones)[i] = malloc(m * sizeof(Habitacion));
-        
+        (hotel->habitaciones)[i] = malloc(m * sizeof(Habitacion));  
     }
+    inicializarCamas();
+
 }
 
+void inicializarCamas(){
+    srand (time(NULL));
+    for (int i=0;i<hotel->row_count;i++){
+        for(int j=0;j<hotel->col_count;j++){
+            char id[5]={'P',j+1+'0','H',(i+1)+'0'};
+            printf(id);
+            printf("\n");
+            for (int k=0;k<5;k++){
+                hotel->habitaciones[i][j].identificador[k]=id[k];
+            }
+            hotel->habitaciones[i][j].numCamas=rand()%5+1;
+        }
+    }
+        printcamas();
+}
+
+void printcamas(){
+    int numc;
+    for (int i=0;i<hotel->row_count;i++){
+        for(int j=0;j<hotel->col_count;j++){
+            numc=hotel->habitaciones[i][j].numCamas;
+            printf("La habitacion %s",(hotel->habitaciones[i][j].identificador));
+            printf(" tiene las siguientes camas: %i\n",numc);
+        }
+    }
+
+}
 void liberarMemoria(){
     
     for (int i = 0; i < hotel->row_count; i++) {
