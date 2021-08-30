@@ -13,12 +13,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "../Headers/Hotel.h"
 
 /*
  * 
  */
+
 int main(int argc, char** argv) {
 
+    iniciarHotelInterfaz();
+    
+    liberarMemoria();
+    
     return (EXIT_SUCCESS);
 }
 

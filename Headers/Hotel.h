@@ -13,12 +13,16 @@
 
 #ifndef HOTEL_H
 #define HOTEL_H
+#include <stdio.h>
 #include <stdlib.h>
 #include "Contenedora.h"
 
-Contenedora *hotel;
+extern Contenedora *hotel;
+
+extern void iniciarHotelInterfaz();
 
 extern void iniciarHotel(int n, int m);
 
 extern void liberarMemoria();
+
 #endif /* HOTEL_H */

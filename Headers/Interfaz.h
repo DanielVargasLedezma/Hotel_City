@@ -5,10 +5,13 @@
  */
 
 /* 
- * File:   Contenedora.c
+ * File:   Interfaz.h
  * Author: Dani
- * 
- * Created on August 26, 2021, 5:18 PM
+ *
+ * Created on August 29, 2021, 7:51 PM
  */
 
-#include "../Headers/Contenedora.h"
+#ifndef INTERFAZ_H
+#define INTERFAZ_H
+
+#endif /* INTERFAZ_H */

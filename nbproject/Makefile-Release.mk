@@ -38,7 +38,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/C_Files/Cliente.o \
 	${OBJECTDIR}/C_Files/Contenedora.o \
 	${OBJECTDIR}/C_Files/Habitacion.o \
+	${OBJECTDIR}/C_Files/Hotel.o \
 	${OBJECTDIR}/C_Files/Informacion.o \
+	${OBJECTDIR}/C_Files/Interfaz.o \
 	${OBJECTDIR}/C_Files/Reservaciones.o \
 	${OBJECTDIR}/C_Files/main.o
 
@@ -82,10 +84,20 @@ ${OBJECTDIR}/C_Files/Habitacion.o: C_Files/Habitacion.c
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Habitacion.o C_Files/Habitacion.c
 
+${OBJECTDIR}/C_Files/Hotel.o: C_Files/Hotel.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Hotel.o C_Files/Hotel.c
+
 ${OBJECTDIR}/C_Files/Informacion.o: C_Files/Informacion.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
 	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Informacion.o C_Files/Informacion.c
+
+${OBJECTDIR}/C_Files/Interfaz.o: C_Files/Interfaz.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
+	${RM} "$@.d"
+	$(COMPILE.c) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Interfaz.o C_Files/Interfaz.c
 
 ${OBJECTDIR}/C_Files/Reservaciones.o: C_Files/Reservaciones.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
