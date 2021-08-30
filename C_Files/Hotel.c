@@ -59,7 +59,15 @@ void inicializarCamas(){
                  hotel->habitaciones[i][j].clasificacion[0]='T';
                  hotel->habitaciones[i][j].clasificacion[1]='C';
             }
-            char id[5]={'P',j+1+'0','H',(i+1)+'0'};
+            char num1[3];
+            char num2[3];
+            sprintf(num1, "%d", i+1);
+            sprintf(num2, "%d", j+1);
+            char id[6]={'P'};
+            char tmp[2]={'H'};
+            strcat(id,num2);
+            strcat(id,tmp);
+            strcat(id,num1);
             for (int k=0;k<7;k++){
                 hotel->habitaciones[i][j].identificador[k]=id[k];
             }

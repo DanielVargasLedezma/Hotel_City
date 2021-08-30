@@ -18,7 +18,7 @@
 
 typedef struct Habitacion{
     
-    char identificador[5];
+    char identificador[8];
     char estado;
     Cliente *cliente;
     Informacion *informacion;
