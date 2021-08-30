@@ -15,13 +15,14 @@
 #define HOTEL_H
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Contenedora.h"
 
 extern Contenedora *hotel;
-extern void inicializarCamas();
-extern void iniciarHotelInterfaz();
-extern void printcamas();
+
 extern void iniciarHotel(int n, int m);
+extern void inicializarHabitaciones();
+
 extern void liberarMemoria();
 
 #endif /* HOTEL_H */

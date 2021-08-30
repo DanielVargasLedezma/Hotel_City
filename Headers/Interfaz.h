@@ -13,5 +13,9 @@
 
 #ifndef INTERFAZ_H
 #define INTERFAZ_H
+#include "Hotel.h"
+
+extern void iniciarHotelInterfaz();
+extern void printHabitaciones();
 
 #endif /* INTERFAZ_H */
