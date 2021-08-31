@@ -22,6 +22,15 @@ extern Contenedora *hotel;
 
 extern void iniciarHotel(int n, int m);
 extern void inicializarHabitaciones();
+extern void setearHabitacionesLibre();
+
+extern int cantidadHabitacionesLibres();
+extern int cantidadHabitacionesEnMant();
+extern int cantidadHabitacionesOcupadas();
+
+extern int cantidadHabitacionesConEstadoTipo(int tipo);
+
+extern void cantidadHabitacionesLibresConNcamas(int numeroDeCamas);
 
 extern void liberarMemoria();
 
