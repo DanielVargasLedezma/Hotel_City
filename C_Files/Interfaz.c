@@ -12,6 +12,7 @@
  */
 
 #include "../Headers/Interfaz.h"
+#include <unistd.h>
 
 void iniciarHotelInterfaz() {
 
@@ -41,7 +42,7 @@ void printHabitaciones() {
 
 void menu() {
     int opcion;
-
+    int continuar;
     do {
         printf("\n   1. Cuantas habitaciones estan libres");
         printf("\n   2. Cuantas habitaciones estan en mantenimiento");
@@ -62,47 +63,67 @@ void menu() {
             case 1:
                 printf("\n   1. Cuantas habitaciones estan libres");
                 printf("\n   Numero de habitaciones desocupadas: ");
-                scanf("%i", opcion);
+                printf("\n   Habitaciones en mantenimiento: %i", cantidadHabitacionesLibres());
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 2:
                 printf("\n   2. Cuantas habitaciones estan en mantenimiento");
-                printf("\n   Habitaciones en mantenimiento: ");
-                scanf("%i", opcion);
+                printf("\n   Habitaciones en mantenimiento: %i", cantidadHabitacionesEnMant());
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 3:
                 printf("\n   3. Cuántas habitaciones ocupadas");
-                printf("\n   Las siguientes habitachioes estan ocupadas: ");
-                printf("");
+                printf("\n   Las siguientes habitachioes estan ocupadas: %i", cantidadHabitacionesOcupadas());
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 4:
+            {
                 printf("\n   4. Cuántas hay desocupadas por cantidad de camas.");
-                printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: ");
                 printf("\n   Ingrese la cantidad de camas deseada: ");
-                int numc;
-                scanf("%d", numc);
-                printf("");
+                int numc=0;
+                scanf("%d", &numc);
+                if(numc>5&&numc<1){
+                    printf("\n Cantidad de camas no valida");
+                    break;
+                }else{
+                printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: ");
+                cantidadHabitacionesLibresConNcamas(numc);
+                }
+                scanf("%i", &continuar);
+                
                 break;
-
+            }
 
             case 5:
                 printf("\n   5. Check in ");
 
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 6:
-                printf("\n   6. Pagar la habitación ");
+                printf("\n   6. Pagar la habitación ");\
+
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 7:
                 printf("\n   7. Liberar la habitacion");
+
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
 
                 break;
 
@@ -110,12 +131,17 @@ void menu() {
             case 8:
                 printf("\n   8. Cuantas personas adultas hay el dia de hoy. ");
 
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
             case 9:
                 printf("\n   9. Cuantos niños existen al dia de hoy en el hotel");
                 printf("\n   Cantidad de niños en el hotel hoy: ");
+
+                printf("\n   Ingrese 1 y enter para continuar");
+                scanf("%i", &continuar);
                 break;
 
 
@@ -129,8 +155,8 @@ void menu() {
                     printf("\n   2. Con los clientes, “Sin TODO INCLUIDO”");
                     printf("\n   3. Con todos los clientes  que hay en el hotel");
                     printf("\n   0. Salir");
-                    printf("\n\n   Introduzca opci%cn (0-3): ");
-                    scanf("%d", opcion2);
+                    printf("\n   Introduzca una opcion (0-3): ");
+                    scanf("%d", &opcion2);
                     switch (opcion2) {
 
                         case 1:
