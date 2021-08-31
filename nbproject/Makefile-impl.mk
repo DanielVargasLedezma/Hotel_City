@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Hotel_X
+PROJECTNAME=Hotel_City
 
 # Active Configuration
 DEFAULTCONF=Debug
