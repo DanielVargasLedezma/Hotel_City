@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin-Windows
-CND_ARTIFACT_NAME_Debug=hotel_city
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/hotel_city
+CND_ARTIFACT_NAME_Debug=hotel_x
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin-Windows/hotel_x
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin-Windows/package
-CND_PACKAGE_NAME_Debug=hotelcity.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/hotelcity.tar
+CND_PACKAGE_NAME_Debug=hotelx.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin-Windows/package/hotelx.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin-Windows
-CND_ARTIFACT_NAME_Release=hotel_city
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/hotel_city
+CND_ARTIFACT_NAME_Release=hotel_x
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin-Windows/hotel_x
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin-Windows/package
-CND_PACKAGE_NAME_Release=hotelcity.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/hotelcity.tar
+CND_PACKAGE_NAME_Release=hotelx.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin-Windows/package/hotelx.tar
 #
 # include compiler specific variables
 #
