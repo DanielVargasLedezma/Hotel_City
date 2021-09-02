@@ -37,10 +37,12 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/C_Files/Cliente.o \
 	${OBJECTDIR}/C_Files/Contenedora.o \
+	${OBJECTDIR}/C_Files/DateGenerator.o \
 	${OBJECTDIR}/C_Files/Habitacion.o \
 	${OBJECTDIR}/C_Files/Hotel.o \
 	${OBJECTDIR}/C_Files/Informacion.o \
 	${OBJECTDIR}/C_Files/Interfaz.o \
+	${OBJECTDIR}/C_Files/ListaReservaciones.o \
 	${OBJECTDIR}/C_Files/Reservaciones.o \
 	${OBJECTDIR}/C_Files/main.o
 
@@ -63,11 +65,11 @@ LDLIBSOPTIONS=
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_x.exe
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city.exe
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_x.exe: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_x ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/hotel_city ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/C_Files/Cliente.o: C_Files/Cliente.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
@@ -78,6 +80,11 @@ ${OBJECTDIR}/C_Files/Contenedora.o: C_Files/Contenedora.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Contenedora.o C_Files/Contenedora.c
+
+${OBJECTDIR}/C_Files/DateGenerator.o: C_Files/DateGenerator.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/DateGenerator.o C_Files/DateGenerator.c
 
 ${OBJECTDIR}/C_Files/Habitacion.o: C_Files/Habitacion.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
@@ -98,6 +105,11 @@ ${OBJECTDIR}/C_Files/Interfaz.o: C_Files/Interfaz.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files
 	${RM} "$@.d"
 	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/Interfaz.o C_Files/Interfaz.c
+
+${OBJECTDIR}/C_Files/ListaReservaciones.o: C_Files/ListaReservaciones.c
+	${MKDIR} -p ${OBJECTDIR}/C_Files
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/C_Files/ListaReservaciones.o C_Files/ListaReservaciones.c
 
 ${OBJECTDIR}/C_Files/Reservaciones.o: C_Files/Reservaciones.c
 	${MKDIR} -p ${OBJECTDIR}/C_Files

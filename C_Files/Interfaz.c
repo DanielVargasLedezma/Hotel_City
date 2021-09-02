@@ -40,6 +40,109 @@ void printHabitaciones() {
     }
 }
 
+void realizarReservacion() {
+    char nombreCliente[10];
+    int identificacion;
+    int modoDePago;
+    int numeroTelefono;
+    int numAdultos;
+    int numInfantes;
+    int dias;
+    int todoIncluido;
+    int p, n;
+
+    Informacion *inf = (Informacion*) malloc(sizeof (Informacion));
+    Cliente *c = (Cliente*) malloc(sizeof (Cliente));
+    printf("\n   Ingrese el piso de la habitación:");
+    scanf("%d", &p);
+
+    printf("\n   Ingrese el número de la habitación:");
+    scanf("%d", &n);
+
+    if (estaOcupada(n, p) == 1) {
+        printf("\n   La habitacion no está disponible:");
+    } else {
+        printf("\n   Ingrese el nombre del cliente:");
+        scanf("%s", nombreCliente);
+        printf("\n   Ingrese la identificacion del cliente:");
+        scanf("%d", &identificacion);
+
+        printf("\n   Ingrese el numero de adultos:");
+        scanf("%d", &numAdultos);
+
+        printf("\n   Ingrese el numero de infantes:");
+        scanf("%d", &numInfantes);
+
+        printf("\n   Ingrese la cantidad de dias:");
+        scanf("%d", &dias);
+
+        printf("\n   ¿Desea adquirir el servicio todo incluido?");
+        printf("\n   1. Si");
+        printf("\n   2. No");
+        scanf("%d", &todoIncluido);
+
+        printf("\n   Los metodos de pago son:");
+        printf("\n   1. Efectivo");
+        printf("\n   2. Tarjeta de debito");
+        printf("\n   3. Tarjeta de credito");
+        printf("\n   Ingrese el numero correspondiente al metodo de pago:");
+        scanf("%i", &modoDePago);
+
+        inf->numOfAdults = numAdultos;
+        inf->numOfDays = dias;
+        inf->numOfKids = numInfantes;
+        inf->typeOfInstance = todoIncluido;
+        for (int i = 0; i < 10; i++) {
+            c->nombreCliente[i] = nombreCliente[i];
+        }
+        c->numeroTelefono = numeroTelefono;
+        c->identificacion = identificacion;
+        c->modoDePago = modoDePago;
+
+        checkIn(c, inf, p, n);
+
+
+    }
+}
+
+void cantidadHabitacionesLibresConNCamas(int numeroDeCamas) {
+
+    int contadorPC = 0, contadorSC = 0, contadorTC = 0;
+
+    //For class 1
+
+    printf("Habitaciones de primera clase con %i \n", numeroDeCamas);
+    for (int i = 0; i < hotel->row_count; i++) {
+        for (int j = 0; j < hotel->col_count; j++) {
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "PC") {
+                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            }
+        }
+    }
+
+    //For class 2
+
+    printf("Habitaciones de segunda clase con %i \n", numeroDeCamas);
+    for (int i = 0; i < hotel->row_count; i++) {
+        for (int j = 0; j < hotel->col_count; j++) {
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "SC") {
+                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            }
+        }
+    }
+
+    //For class 3
+
+    printf("Habitaciones de tercera clase con %i \n", &numeroDeCamas);
+    for (int i = 0; i < hotel->row_count; i++) {
+        for (int j = 0; j < hotel->col_count; j++) {
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "TC") {
+                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            }
+        }
+    }
+}
+
 void menu() {
     int opcion;
     int continuar;
@@ -89,17 +192,17 @@ void menu() {
             {
                 printf("\n   4. Cuántas hay desocupadas por cantidad de camas.");
                 printf("\n   Ingrese la cantidad de camas deseada: ");
-                int numc=0;
+                int numc = 0;
                 scanf("%d", &numc);
-                if(numc>5&&numc<1){
+                if (numc > 5 && numc < 1) {
                     printf("\n Cantidad de camas no valida");
                     break;
-                }else{
-                printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: ");
-                cantidadHabitacionesLibresConNcamas(numc);
+                } else {
+                    printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: ");
+                    cantidadHabitacionesLibresConNCamas(numc);
                 }
                 scanf("%i", &continuar);
-                
+
                 break;
             }
 

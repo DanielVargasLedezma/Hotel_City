@@ -6,10 +6,12 @@
                    projectFiles="true">
       <itemPath>Headers/Cliente.h</itemPath>
       <itemPath>Headers/Contenedora.h</itemPath>
+      <itemPath>Headers/DateGenerator.h</itemPath>
       <itemPath>Headers/Habitacion.h</itemPath>
       <itemPath>Headers/Hotel.h</itemPath>
       <itemPath>Headers/Informacion.h</itemPath>
       <itemPath>Headers/Interfaz.h</itemPath>
+      <itemPath>Headers/ListaReservaciones.h</itemPath>
       <itemPath>Headers/Reservaciones.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
@@ -21,10 +23,12 @@
                    projectFiles="true">
       <itemPath>C_Files/Cliente.c</itemPath>
       <itemPath>C_Files/Contenedora.c</itemPath>
+      <itemPath>C_Files/DateGenerator.c</itemPath>
       <itemPath>C_Files/Habitacion.c</itemPath>
       <itemPath>C_Files/Hotel.c</itemPath>
       <itemPath>C_Files/Informacion.c</itemPath>
       <itemPath>C_Files/Interfaz.c</itemPath>
+      <itemPath>C_Files/ListaReservaciones.c</itemPath>
       <itemPath>C_Files/Reservaciones.c</itemPath>
       <itemPath>C_Files/main.c</itemPath>
     </logicalFolder>
@@ -54,6 +58,8 @@
       </item>
       <item path="C_Files/Contenedora.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="C_Files/DateGenerator.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="C_Files/Habitacion.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Hotel.c" ex="false" tool="0" flavor2="0">
@@ -61,6 +67,8 @@
       <item path="C_Files/Informacion.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Interfaz.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="C_Files/ListaReservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Reservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -70,6 +78,8 @@
       </item>
       <item path="Headers/Contenedora.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Headers/DateGenerator.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Headers/Habitacion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Hotel.h" ex="false" tool="3" flavor2="0">
@@ -77,6 +87,8 @@
       <item path="Headers/Informacion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Interfaz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/ListaReservaciones.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Reservaciones.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -105,6 +117,8 @@
       </item>
       <item path="C_Files/Contenedora.c" ex="false" tool="0" flavor2="0">
       </item>
+      <item path="C_Files/DateGenerator.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="C_Files/Habitacion.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Hotel.c" ex="false" tool="0" flavor2="0">
@@ -112,6 +126,8 @@
       <item path="C_Files/Informacion.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Interfaz.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="C_Files/ListaReservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Reservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
@@ -121,6 +137,8 @@
       </item>
       <item path="Headers/Contenedora.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="Headers/DateGenerator.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Headers/Habitacion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Hotel.h" ex="false" tool="3" flavor2="0">
@@ -128,6 +146,8 @@
       <item path="Headers/Informacion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Interfaz.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Headers/ListaReservaciones.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Reservaciones.h" ex="false" tool="3" flavor2="0">
       </item>

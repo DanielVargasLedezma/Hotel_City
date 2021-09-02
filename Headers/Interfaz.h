@@ -19,6 +19,10 @@
 
 extern void iniciarHotelInterfaz();
 extern void printHabitaciones();
+
+extern void realizarReservacion();
+extern void cantidadHabitacionesLibresConNCamas(int numeroDeCamas);
+
 extern void menu();
 
 #endif /* INTERFAZ_H */

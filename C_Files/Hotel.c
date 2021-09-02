@@ -143,37 +143,36 @@ int cantidadHabitacionesConEstadoTipo(int tipo) {
     }
 }
 
-void cantidadHabitacionesLibresConNcamas(int numeroDeCamas) {
 
-    //For class 1
-    int contadorPC = 0, contadorSC = 0, contadorTC = 0;
 
-    for (int i = 0; i < hotel->row_count; i++) {
-        for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "PC") {
+void checkIn(Cliente* c, Informacion* info, int piso, int numhab)
+{
+    hotel->habitaciones[numhab][piso].cliente = c;
+    hotel->habitaciones[numhab][piso].estado = 'O';
+    hotel->habitaciones[numhab][piso].informacion = info;
 
-            }
-        }
+}
+
+int estaOcupada(int i, int j)
+{
+    if (hotel->habitaciones[i][j].estado == 'O' || hotel->habitaciones[i][j].estado == 'M') {
+        return 1;
     }
-
-    for (int i = 0; i < hotel->row_count; i++) {
-        for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].numCamas == numeroDeCamas) {
-
-            }
-        }
-    }
-
-    for (int i = 0; i < hotel->row_count; i++) {
-        for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].numCamas == numeroDeCamas) {
-
-            }
-        }
+    else{
+        return 0;
     }
 }
 
-void liberarMemoria() {
+void liberarMemoria() 
+{
+    for (int i = 0; i < hotel->row_count; i++) {
+        for (int j = 0; j < hotel->col_count; j++) {
+            if (hotel->habitaciones[i][j].cliente) {
+                free(hotel->habitaciones[i][j].cliente);
+            }
+        }
+    }
+
     for (int i = 0; i < hotel->row_count; i++) {
         free(hotel->habitaciones[i]);
     }
@@ -181,3 +180,4 @@ void liberarMemoria() {
 
     free(hotel);
 }
+

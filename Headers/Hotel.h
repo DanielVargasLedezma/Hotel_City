@@ -17,8 +17,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include "Contenedora.h"
+#include "ListaReservaciones.h"
 
-extern Contenedora *hotel;
+extern Contenedora* hotel;
 
 extern void iniciarHotel(int n, int m);
 extern void inicializarHabitaciones();
@@ -27,10 +28,12 @@ extern void setearHabitacionesLibre();
 extern int cantidadHabitacionesLibres();
 extern int cantidadHabitacionesEnMant();
 extern int cantidadHabitacionesOcupadas();
-
+extern int estaOcupada(int j, int i);
 extern int cantidadHabitacionesConEstadoTipo(int tipo);
 
-extern void cantidadHabitacionesLibresConNcamas(int numeroDeCamas);
+
+extern void checkIn(Cliente* c, Informacion* info, int piso, int numhab);
+
 
 extern void liberarMemoria();
 
