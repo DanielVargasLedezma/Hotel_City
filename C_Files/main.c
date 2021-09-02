@@ -23,8 +23,6 @@ int main(int argc, char** argv) {
 
     iniciarHotelInterfaz();
     
-    printHabitaciones();
-    
     menu();
     
     liberarMemoria();

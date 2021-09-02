@@ -51,8 +51,7 @@ void realizarReservacion() {
     int todoIncluido;
     int p, n;
 
-    Informacion *inf = (Informacion*) malloc(sizeof (Informacion));
-    Cliente *c = (Cliente*) malloc(sizeof (Cliente));
+
     printf("\n   Ingrese el piso de la habitación:");
     scanf("%d", &p);
 
@@ -61,9 +60,14 @@ void realizarReservacion() {
 
     if (estaOcupada(n, p) == 1) {
         printf("\n   La habitacion no está disponible:");
+
     } else {
+        Informacion *inf = (Informacion*) malloc(sizeof (Informacion));
+        Cliente* c = (Cliente*) malloc(sizeof(Cliente));
+
         printf("\n   Ingrese el nombre del cliente:");
         scanf("%s", nombreCliente);
+
         printf("\n   Ingrese la identificacion del cliente:");
         scanf("%d", &identificacion);
 
@@ -92,16 +96,14 @@ void realizarReservacion() {
         inf->numOfDays = dias;
         inf->numOfKids = numInfantes;
         inf->typeOfInstance = todoIncluido;
-        for (int i = 0; i < 10; i++) {
-            c->nombreCliente[i] = nombreCliente[i];
-        }
+        
+        memcpy(c->nombreCliente, nombreCliente, sizeof c->nombreCliente);
+
         c->numeroTelefono = numeroTelefono;
         c->identificacion = identificacion;
         c->modoDePago = modoDePago;
 
         checkIn(c, inf, p, n);
-
-
     }
 }
 
@@ -133,7 +135,7 @@ void cantidadHabitacionesLibresConNCamas(int numeroDeCamas) {
 
     //For class 3
 
-    printf("Habitaciones de tercera clase con %i \n", &numeroDeCamas);
+    printf("Habitaciones de tercera clase con %i \n", numeroDeCamas);
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
             if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "TC") {
@@ -150,7 +152,7 @@ void menu() {
         printf("\n   1. Cuantas habitaciones estan libres");
         printf("\n   2. Cuantas habitaciones estan en mantenimiento");
         printf("\n   3. Cuántas habitaciones ocupadas");
-        printf("\n   4. Cuántas hay desocupadas por cantidad de camas.");
+        printf("\n   4. Cuántas hay desocupadas por cantidad de camas");
         printf("\n   5. Check in");
         printf("\n   6. Pagar la habitación ");
         printf("\n   7. Liberar la habitación");
@@ -208,7 +210,7 @@ void menu() {
 
             case 5:
                 printf("\n   5. Check in ");
-
+                realizarReservacion();
                 printf("\n   Ingrese 1 y enter para continuar");
                 scanf("%i", &continuar);
                 break;

@@ -48,5 +48,22 @@ void push(Reservacion* data)
 
 void freeList()
 {
+	if (!lista->head) {
+		return;
+	}
 
+	Nodo* tmp = lista->head;
+
+	while (tmp) {
+		if (tmp->data) {
+			if (tmp->data->informacion) {
+				free(tmp->data->informacion);
+			}
+			free(tmp->data);
+		}
+
+		lista->head = lista->head->sig;
+		free(tmp);
+		tmp = lista->head;
+	}
 }

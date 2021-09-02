@@ -30,6 +30,8 @@ void iniciarHotel(int n, int m) {
     }
 
     inicializarHabitaciones();
+    
+    initList();
 }
 
 void inicializarHabitaciones() {
@@ -143,20 +145,37 @@ int cantidadHabitacionesConEstadoTipo(int tipo) {
     }
 }
 
-
-
 void checkIn(Cliente* c, Informacion* info, int piso, int numhab)
 {
     hotel->habitaciones[numhab][piso].cliente = c;
     hotel->habitaciones[numhab][piso].estado = 'O';
     hotel->habitaciones[numhab][piso].informacion = info;
 
+    Reservacion* reservacion = (Reservacion*)malloc(sizeof(Reservacion));
+
+    reservacion->informacion = info;
+
+    memcpy(reservacion->nombreCliente, c->nombreCliente, sizeof reservacion->nombreCliente);
+
+    reservacion->estadoReservacion = 'G';
+
+    reservacion->date_reserved[0] = generateDay();
+    reservacion->date_reserved[1] = generateMonth();
+    reservacion->date_reserved[2] = generateYear();
+    reservacion->date_reserved[3] = generateHour();
+    reservacion->date_reserved[4] = generateMinutes();
+    reservacion->date_reserved[5] = generateSeconds();
+
+    push(reservacion);
 }
 
-int estaOcupada(int i, int j)
+int estadoHabitacion(int i, int j)
 {
-    if (hotel->habitaciones[i][j].estado == 'O' || hotel->habitaciones[i][j].estado == 'M') {
+    if (hotel->habitaciones[i][j].estado == 'O') {
         return 1;
+    }
+    else if (hotel->habitaciones[i][j].estado == 'M') {
+        return 2;
     }
     else{
         return 0;
@@ -176,8 +195,11 @@ void liberarMemoria()
     for (int i = 0; i < hotel->row_count; i++) {
         free(hotel->habitaciones[i]);
     }
+
     free(hotel->habitaciones);
 
     free(hotel);
+
+    freeList();
 }
 

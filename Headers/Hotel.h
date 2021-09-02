@@ -18,6 +18,7 @@
 #include <string.h>
 #include "Contenedora.h"
 #include "ListaReservaciones.h"
+#include "DateGenerator.h"
 
 extern Contenedora* hotel;
 
@@ -28,7 +29,9 @@ extern void setearHabitacionesLibre();
 extern int cantidadHabitacionesLibres();
 extern int cantidadHabitacionesEnMant();
 extern int cantidadHabitacionesOcupadas();
-extern int estaOcupada(int j, int i);
+
+//Retorna 0 si esta libre, 1 si esta ocupada o 2 si esta en mantenimiento
+extern int estadoHabitacion(int j, int i);
 extern int cantidadHabitacionesConEstadoTipo(int tipo);
 
 
