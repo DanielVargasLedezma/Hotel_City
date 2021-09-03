@@ -39,7 +39,7 @@ void inicializarHabitaciones() {
 
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
-
+            hotel->habitaciones[i][j].estado='L';    
             int clasificador = rand() % 3 + 1;
             if (clasificador == 1) {
                 hotel->habitaciones[i][j].clasificacion[0] = 'P';
