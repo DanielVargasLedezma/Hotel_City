@@ -58,7 +58,7 @@ void realizarReservacion() {
     printf("\n   Ingrese el número de la habitación:");
     scanf("%d", &n);
 
-    if (estaOcupada(n, p) == 1) {
+    if (estadoHabitacion(n, p) == 1) {
         printf("\n   La habitacion no está disponible:");
 
     } else {
@@ -110,42 +110,57 @@ void realizarReservacion() {
 void cantidadHabitacionesLibresConNCamas(int numeroDeCamas) {
 
     int contadorPC = 0, contadorSC = 0, contadorTC = 0;
-
+    char PC[3]="PC";
+    char SC[3]="SC";
+    char TC[3]="TC";
     //For class 1
 
-    printf("Habitaciones de primera clase con %i \n", numeroDeCamas);
+    printf("\nHabitaciones de primera clase con %i camas: \n", numeroDeCamas);
+ 
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "PC") {
-                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && (strcmp(hotel->habitaciones[i][j].clasificacion, PC) == 0)) {
+                    contadorPC++;
+                 printf(" La habitacion %s \n", (hotel->habitaciones[i][j].identificador));
             }
         }
     }
-
+    if(contadorPC==0){
+        printf(" No hay ninguna habitacion disponible \n");
+    }
     //For class 2
 
-    printf("Habitaciones de segunda clase con %i \n", numeroDeCamas);
+    printf("\nHabitaciones de segunda clase con %i camas: \n", numeroDeCamas);
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "SC") {
-                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && (strcmp(hotel->habitaciones[i][j].clasificacion, SC) == 0)) {
+                contadorSC++;
+                printf(" La habitacion %s \n", (hotel->habitaciones[i][j].identificador));
             }
         }
+    }
+    if(contadorSC==0){
+       printf(" No hay ninguna habitacion disponible \n");
     }
 
     //For class 3
 
-    printf("Habitaciones de tercera clase con %i \n", numeroDeCamas);
+    printf("\nHabitaciones de tercera clase con %i camas: \n", numeroDeCamas);
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && hotel->habitaciones[i][j].clasificacion == "TC") {
-                printf("Habitacion %s", (hotel->habitaciones[i][j].identificador));
+            if (hotel->habitaciones[i][j].estado == 'L' && hotel->habitaciones[i][j].numCamas == numeroDeCamas && (strcmp(hotel->habitaciones[i][j].clasificacion, TC) == 0)) {
+                contadorTC++;
+                printf(" La habitacion %s \n", (hotel->habitaciones[i][j].identificador));
             }
         }
+    }
+    if(contadorTC==0){
+         printf(" No hay ninguna habitacion disponible \n");
     }
 }
 
 void menu() {
+    printHabitaciones();
     int opcion;
     int continuar;
     do {
@@ -167,9 +182,8 @@ void menu() {
         switch (opcion) {
             case 1:
                 printf("\n   1. Cuantas habitaciones estan libres");
-                printf("\n   Numero de habitaciones desocupadas: ");
-                printf("\n   Habitaciones en mantenimiento: %i", cantidadHabitacionesLibres());
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Numero de habitaciones desocupadas: %i", cantidadHabitacionesLibres());
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -177,7 +191,7 @@ void menu() {
             case 2:
                 printf("\n   2. Cuantas habitaciones estan en mantenimiento");
                 printf("\n   Habitaciones en mantenimiento: %i", cantidadHabitacionesEnMant());
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -185,7 +199,7 @@ void menu() {
             case 3:
                 printf("\n   3. Cuántas habitaciones ocupadas");
                 printf("\n   Las siguientes habitachioes estan ocupadas: %i", cantidadHabitacionesOcupadas());
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -200,7 +214,7 @@ void menu() {
                     printf("\n Cantidad de camas no valida");
                     break;
                 } else {
-                    printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: ");
+                    printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: \n");
                     cantidadHabitacionesLibresConNCamas(numc);
                 }
                 scanf("%i", &continuar);
@@ -211,7 +225,7 @@ void menu() {
             case 5:
                 printf("\n   5. Check in ");
                 realizarReservacion();
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -219,7 +233,7 @@ void menu() {
             case 6:
                 printf("\n   6. Pagar la habitación ");\
 
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -227,7 +241,7 @@ void menu() {
             case 7:
                 printf("\n   7. Liberar la habitacion");
 
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
 
                 break;
@@ -236,7 +250,7 @@ void menu() {
             case 8:
                 printf("\n   8. Cuantas personas adultas hay el dia de hoy. ");
 
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
@@ -245,7 +259,7 @@ void menu() {
                 printf("\n   9. Cuantos niños existen al dia de hoy en el hotel");
                 printf("\n   Cantidad de niños en el hotel hoy: ");
 
-                printf("\n   Ingrese 1 y enter para continuar");
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
                 scanf("%i", &continuar);
                 break;
 
