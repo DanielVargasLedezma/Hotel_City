@@ -13,14 +13,17 @@
 
 #ifndef INTERFAZ_H
 #define INTERFAZ_H
-#include "Hotel.h"
 #include <stdio.h>
 #include <string.h>
+#include "Hotel.h"
+
+extern void iniciarPrograma();
 
 extern void iniciarHotelInterfaz();
 extern void printHabitaciones();
 
 extern void realizarReservacion();
+
 extern void cantidadHabitacionesLibresConNCamas(int numeroDeCamas);
 
 extern void menu();

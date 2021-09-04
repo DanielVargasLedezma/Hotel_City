@@ -66,4 +66,6 @@ void freeList()
 		free(tmp);
 		tmp = lista->head;
 	}
+
+	free(lista);
 }

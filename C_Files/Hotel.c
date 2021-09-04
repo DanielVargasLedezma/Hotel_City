@@ -12,8 +12,7 @@
  */
 
 #include "../Headers/Hotel.h"
-#include <time.h>
-#include <string.h>
+
 Contenedora *hotel;
 
 void iniciarHotel(int n, int m) {
@@ -150,6 +149,11 @@ void checkIn(Cliente* c, Informacion* info, int piso, int numhab)
     hotel->habitaciones[numhab][piso].cliente = c;
     hotel->habitaciones[numhab][piso].estado = 'O';
     hotel->habitaciones[numhab][piso].informacion = info;
+
+    registrarReservacion(c, info);
+}
+
+void registrarReservacion(Cliente* c, Informacion* info) {
 
     Reservacion* reservacion = (Reservacion*)malloc(sizeof(Reservacion));
 

@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "Contenedora.h"
 #include "ListaReservaciones.h"
 #include "DateGenerator.h"
@@ -34,9 +35,9 @@ extern int cantidadHabitacionesOcupadas();
 extern int estadoHabitacion(int j, int i);
 extern int cantidadHabitacionesConEstadoTipo(int tipo);
 
-
 extern void checkIn(Cliente* c, Informacion* info, int piso, int numhab);
 
+extern void registrarReservacion(Cliente* c, Informacion* info);
 
 extern void liberarMemoria();
 

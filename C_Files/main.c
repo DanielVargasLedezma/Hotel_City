@@ -21,11 +21,7 @@
 
 int main(int argc, char** argv) {
 
-    iniciarHotelInterfaz();
-    
-    menu();
-    
-    liberarMemoria();
+    iniciarPrograma();
     
     return (EXIT_SUCCESS);
 }
