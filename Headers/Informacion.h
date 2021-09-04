@@ -19,7 +19,8 @@ typedef struct Informacion{
     int numOfAdults;
     int numOfKids;
     int numOfDays;
-    char typeOfInstance;
+    //1 para todo incluido, 2 para no
+    int typeOfInstance;
     
 }Informacion;
 

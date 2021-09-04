@@ -14,6 +14,9 @@
 #ifndef LISTARESERVACIONES_H
 #define LISTARESERVACIONES_H
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "DateGenerator.h"
 #include "Reservaciones.h"
 
 typedef struct Nodo {
@@ -34,6 +37,27 @@ extern ListaReservacion* lista;
 extern void initList();
 
 extern void push(Reservacion* data);
+
+extern int cantidadAdultosHoy();
+
+//Total recaudado con todo incluido
+extern int totalRecaudadoHoyTI();
+
+//Total recaudado sin todo incluido
+extern int totalRecaudadoHoyNTI();
+
+//Total recaudado con todos los clientes de hoy
+extern int totalRecaudadoHoy();
+
+//Return 0 si son iguales, 1 si no lo son
+extern int compararFechaConHoy(Reservacion *data);
+
+//Return 0 si es reservado en la noche, 1 si no
+extern int comprobarSiReservadoEnNoche(int horaReserva);
+
+extern void calcularCostoTotalReservacion(Reservacion* data);
+
+extern void terminarReservacion(Cliente* cliente);
 
 extern void freeList();
 

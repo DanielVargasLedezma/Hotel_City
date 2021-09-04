@@ -1,0 +1,154 @@
+Solo si no incluido
+
+Costo por persona en habitacion (horario normal evitando noche)
+Una persona -> 150
+Dos personas -> 250
+Tres personas -> 350
+Mas de tres -> 400
+
+Si se realiza por la noche (7pm a 12am)
+Una persona -> 150 - (150 * 0.25)
+Dos personas -> 250 - (250 * 0.20) 
+Tres personas -> 350 - (350 * 0.15)
+Mas de tres -> 400 - (400 * 0.10)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200
+
+
+Costo por Clases
+
+
+Si es primera clase 
+
+Si es no incluido en horario normal (horario normal evitando noche)
+Una persona -> 150 + (150 * 0.30)
+Dos personas -> 250 + (250 * 0.30)
+Tres personas -> 350 + (350 * 0.30)
+Mas de tres -> 400 + (400 * 0.30)
+
+Si es no incluido en la noche
+Una persona -> 150 - (150 * 0.25) + ((150 - (150 * 0.25)) * 0.30)
+Dos personas -> (250 - (250 * 0.20)) + ((250 - (250 * 0.20)) * 0.30)
+Tres personas -> (350 - (350 * 0.15)) + ((350 - (350 * 0.15)) * 0.30)
+Mas de tres -> (400 - (400 * 0.10)) + ((400 - (400 * 0.10)) * 0.30)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.30)
+
+
+Si es segunda clase
+
+Si es no incluido en horario normal (horario normal evitando noche)
+Una persona -> 150 + (150 * 0.20)
+Dos personas -> 250 + (250 * 0.20)
+Tres personas -> 350 + (350 * 0.20)
+Mas de tres -> 400 + (400 * 0.20)
+
+Si es no incluido en la noche
+Una persona -> 150 - (150 * 0.25) + ((150 - (150 * 0.25)) * 0.20)
+Dos personas -> (250 - (250 * 0.20)) + ((250 - (250 * 0.20)) * 0.20)
+Tres personas -> (350 - (350 * 0.15)) + ((350 - (350 * 0.15)) * 0.20)
+Mas de tres -> (400 - (400 * 0.10)) + ((400 - (400 * 0.10)) * 0.20)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.20)
+
+
+Si es tercera clase no hay cobro extra, o sea:
+
+Solo si no incluido (horario normal evitando noche)
+
+Costo por persona en habitacion
+Una persona -> 150
+Dos personas -> 250
+Tres personas -> 350
+Mas de tres -> 400
+
+Si se realiza por la noche (7pm a 12am)
+Una persona -> 150 - (150 * 0.25)
+Dos personas -> 250 - (250 * 0.20) 
+Tres personas -> 350 - (350 * 0.15)
+Mas de tres -> 400 - (400 * 0.10)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200
+
+
+Solo por la noche
+
+Si es primera clase 
+
+Si es no incluido en la noche
+Una persona -> 150 - (150 * 0.25) + ((150 - (150 * 0.25)) * 0.30)
+Dos personas -> (250 - (250 * 0.20)) + ((250 - (250 * 0.20)) * 0.30)
+Tres personas -> (350 - (350 * 0.15)) + ((350 - (350 * 0.15)) * 0.30)
+Mas de tres -> (400 - (400 * 0.10)) + ((400 - (400 * 0.10)) * 0.30)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.30)
+
+
+Si es segunda clase
+
+Si es no incluido en la noche
+Una persona -> 150 - (150 * 0.25) + ((150 - (150 * 0.25)) * 0.20)
+Dos personas -> (250 - (250 * 0.20)) + ((250 - (250 * 0.20)) * 0.20)
+Tres personas -> (350 - (350 * 0.15)) + ((350 - (350 * 0.15)) * 0.20)
+Mas de tres -> (400 - (400 * 0.10)) + ((400 - (400 * 0.10)) * 0.20)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.20)
+
+
+Si es tercera clase
+
+Si se realiza por la noche (7pm a 12am)
+Una persona -> 150 - (150 * 0.25)
+Dos personas -> 250 - (250 * 0.20) 
+Tres personas -> 350 - (350 * 0.15)
+Mas de tres -> 400 - (400 * 0.10)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200
+
+
+Durante todo el dia menos noche
+
+
+Si es primera clase
+
+Si es no incluido en horario normal (horario normal evitando noche)
+Una persona -> 150 + (150 * 0.30)
+Dos personas -> 250 + (250 * 0.30)
+Tres personas -> 350 + (350 * 0.30)
+Mas de tres -> 400 + (400 * 0.30)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.30)
+
+
+Si es segunda clase
+
+Si es no incluido en horario normal (horario normal evitando noche)
+Una persona -> 150 + (150 * 0.20)
+Dos personas -> 250 + (250 * 0.20)
+Tres personas -> 350 + (350 * 0.20)
+Mas de tres -> 400 + (400 * 0.20)
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200 + ((NPersonas mayores * 300 + NNiños * 200) * 0.20)
+
+
+Si es tercera clase
+
+Solo si no incluido (horario normal evitando noche)
+
+Costo por persona en habitacion
+Una persona -> 150
+Dos personas -> 250
+Tres personas -> 350
+Mas de tres -> 400
+
+Solo si todo incluido
+NPersonas mayores * 300 + NNiños * 200

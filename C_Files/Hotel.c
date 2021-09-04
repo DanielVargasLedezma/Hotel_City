@@ -38,8 +38,11 @@ void inicializarHabitaciones() {
 
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
+            
             hotel->habitaciones[i][j].estado='L';    
+           
             int clasificador = rand() % 3 + 1;
+            
             if (clasificador == 1) {
                 hotel->habitaciones[i][j].clasificacion[0] = 'P';
                 hotel->habitaciones[i][j].clasificacion[1] = 'C';
@@ -150,16 +153,16 @@ void checkIn(Cliente* c, Informacion* info, int piso, int numhab)
     hotel->habitaciones[numhab][piso].estado = 'O';
     hotel->habitaciones[numhab][piso].informacion = info;
 
-    registrarReservacion(c, info);
+    registrarReservacion(c, info, piso, numhab);
 }
 
-void registrarReservacion(Cliente* c, Informacion* info) {
+void registrarReservacion(Cliente* c, Informacion* info, int piso, int numhab) {
 
     Reservacion* reservacion = (Reservacion*)malloc(sizeof(Reservacion));
 
     reservacion->informacion = info;
 
-    memcpy(reservacion->nombreCliente, c->nombreCliente, sizeof reservacion->nombreCliente);
+    reservacion->cliente = c;
 
     reservacion->estadoReservacion = 'G';
 
@@ -169,6 +172,8 @@ void registrarReservacion(Cliente* c, Informacion* info) {
     reservacion->date_reserved[3] = generateHour();
     reservacion->date_reserved[4] = generateMinutes();
     reservacion->date_reserved[5] = generateSeconds();
+
+    memcpy(reservacion->clasificacionHabitacionReservada, hotel->habitaciones[numhab][piso].clasificacion, sizeof reservacion->clasificacionHabitacionReservada);
 
     push(reservacion);
 }
@@ -188,14 +193,6 @@ int estadoHabitacion(int i, int j)
 
 void liberarMemoria() 
 {
-    for (int i = 0; i < hotel->row_count; i++) {
-        for (int j = 0; j < hotel->col_count; j++) {
-            if (hotel->habitaciones[i][j].cliente) {
-                free(hotel->habitaciones[i][j].cliente);
-            }
-        }
-    }
-
     for (int i = 0; i < hotel->row_count; i++) {
         free(hotel->habitaciones[i]);
     }

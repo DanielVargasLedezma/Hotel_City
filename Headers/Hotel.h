@@ -13,13 +13,9 @@
 
 #ifndef HOTEL_H
 #define HOTEL_H
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include <time.h>
 #include "Contenedora.h"
 #include "ListaReservaciones.h"
-#include "DateGenerator.h"
 
 extern Contenedora* hotel;
 
@@ -37,7 +33,7 @@ extern int cantidadHabitacionesConEstadoTipo(int tipo);
 
 extern void checkIn(Cliente* c, Informacion* info, int piso, int numhab);
 
-extern void registrarReservacion(Cliente* c, Informacion* info);
+extern void registrarReservacion(Cliente* c, Informacion* info, int piso, int numhab);
 
 extern void liberarMemoria();
 

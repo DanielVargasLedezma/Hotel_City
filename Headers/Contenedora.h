@@ -20,8 +20,8 @@
 typedef struct Contenedora{
     
     Habitacion **habitaciones;
-    int row_count; //n
-    int col_count;//m
+    int row_count; //n - habitaciones
+    int col_count;//m - pisos
     
     
 }Contenedora;

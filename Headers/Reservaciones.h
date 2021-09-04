@@ -14,23 +14,28 @@
 #ifndef RESERVACIONES_H
 #define RESERVACIONES_H
 #include "Informacion.h"
+#include "Cliente.h"
 
 typedef struct Reservacion {
 
     Informacion* informacion;
 
-    //[0] dia - [1] mes - [2] año - [3] hora - [4] minutos - [5] segundos
+    //[0] day - [1] month - [2] year - [3] hour - [4] minutes - [5] seconds
     int date_reserved[6];
 
-    //[0] dia - [1] mes - [2] año - [3] hora - [4] minutos - [5] segundos
+    //[0] day - [1] month - [2] year - [3] hour - [4] minutes - [5] seconds
     int date_finished[6];
 
-    char nombreCliente[10];
+    Cliente* cliente;
 
-    int costoReservacion;
+    double costoReservacion;
 
+    //G por going, D for done
     char estadoReservacion;
 
-}Reservacion;
+    //PC, SC, TC
+    char clasificacionHabitacionReservada[2];
+
+} Reservacion;
 
 #endif /* RESERVACIONES_H */
