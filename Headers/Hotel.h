@@ -23,6 +23,7 @@ extern void iniciarHotel(int n, int m);
 extern void inicializarHabitaciones();
 extern void setearHabitacionesLibre();
 
+extern int liberarHabitacionCedula(int ced);
 extern int cantidadHabitacionesLibres();
 extern int cantidadHabitacionesEnMant();
 extern int cantidadHabitacionesOcupadas();

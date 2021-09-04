@@ -166,7 +166,7 @@ void cantidadHabitacionesLibresConNCamas(int numeroDeCamas) {
 
 void menu() {
     int opcion = 0;
-    int continuar = 0;
+    char continuar ;
     
     do {
         printf("\n  01. Cuantas habitaciones estan libres");
@@ -189,7 +189,7 @@ void menu() {
                 printf("\n   1. Cuantas habitaciones estan libres");
                 printf("\n   Numero de habitaciones desocupadas: %i", cantidadHabitacionesLibres());
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
@@ -197,7 +197,7 @@ void menu() {
                 printf("\n   2. Cuantas habitaciones estan en mantenimiento");
                 printf("\n   Habitaciones en mantenimiento: %i", cantidadHabitacionesEnMant());
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
@@ -205,7 +205,7 @@ void menu() {
                 printf("\n   3. Cuántas habitaciones ocupadas");
                 printf("\n   Las siguientes habitachioes estan ocupadas: %i", cantidadHabitacionesOcupadas());
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
@@ -223,7 +223,8 @@ void menu() {
                     printf("\n   Cantidad de habitaciones desocupadas por cantidad de camas: \n");
                     cantidadHabitacionesLibresConNCamas(numc);
                 }
-                scanf("%i", &continuar);
+                printf("\n   Ingrese cualquier caracter y enter para continuar: ");
+                scanf("%c", &continuar);
 
                 break;
             }
@@ -232,7 +233,7 @@ void menu() {
                 printf("\n   5. Check in ");
                 realizarReservacion();
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
@@ -240,33 +241,39 @@ void menu() {
                 printf("\n   6. Pagar la habitación ");\
 
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
-            case 7:
-                printf("\n   7. Liberar la habitacion");
-
+            case 7:{
+                printf("\n   7. Liberar la habitacion por numero de cedula");
+                printf("\n   Ingrese el numero de cedula: ");
+                int ced = 0;
+                scanf("%d", &ced);
+                if(liberarHabitacionCedula(ced)==1){
+                    printf("Habitacion liberada con exito");
+                }else{
+                    printf("Ocurrio un error al liberar esta habitacion");
+                }
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
 
                 break;
-
+            }
 
             case 8:
                 printf("\n   8. Cuantas personas adultas hay el dia de hoy. ");
-
+                printf("\n   Cantidad de adultos en el hotel hoy: %i",cantidadAdultosHoy());
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 
             case 9:
                 printf("\n   9. Cuantos niños existen al dia de hoy en el hotel");
-                printf("\n   Cantidad de niños en el hotel hoy: ");
-
+                printf("\n   Cantidad de niños en el hotel hoy: %i",cantidadInfantesHoy());
                 printf("\n   Ingrese cualquier caracter y enter para continuar: ");
-                scanf("%i", &continuar);
+                scanf("%c", &continuar);
                 break;
 
 

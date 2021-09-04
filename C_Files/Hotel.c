@@ -33,6 +33,19 @@ void iniciarHotel(int n, int m) {
     initList();
 }
 
+int liberarHabitacionCedula(int ced){
+    for (int i = 0; i < hotel->row_count; i++) {
+        for (int j = 0; j < hotel->col_count; j++) {
+            if(hotel->habitaciones[i][j].cliente->identificacion==ced&&hotel->habitaciones[i][j].estado=='O'){
+                hotel->habitaciones[i][j].estado = 'L';
+                return 1;
+            }else{
+                return 0;
+            }
+        }
+    }
+}
+
 void inicializarHabitaciones() {
     srand(time(NULL));
 
@@ -80,6 +93,7 @@ void setearHabitacionesLibre() {
     for (int i = 0; i < hotel->row_count; i++) {
         for (int j = 0; j < hotel->col_count; j++) {
             hotel->habitaciones[i][j].estado = 'L';
+            
         }
     }
 }
