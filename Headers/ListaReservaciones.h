@@ -40,6 +40,8 @@ extern void push(Reservacion* data);
 
 extern int cantidadAdultosHoy();
 
+extern int cantidadInfantesHoy();
+
 //Total recaudado con todo incluido
 extern int totalRecaudadoHoyTI();
 

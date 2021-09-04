@@ -52,6 +52,28 @@ void push(Reservacion* data)
 	}
 }
 
+int cantidadInfantesHoy()
+{
+        if (!lista || !lista->head) {
+                    return 0;
+            }
+
+            int contadorInfantes = 0;
+
+            Nodo* tmp = lista->head;
+
+            while (tmp) {
+                    if (compararFechaConHoy(tmp->data) == 0) {
+                            if (tmp->data && tmp->data->informacion && tmp->data->informacion->numOfKids > 0) {
+                                    contadorInfantes += tmp->data->informacion->numOfKids;
+                            }
+                    }
+                    tmp = tmp->sig;
+            }
+
+            return contadorInfantes;
+}
+
 int cantidadAdultosHoy()
 {
 	if (!lista || !lista->head) {

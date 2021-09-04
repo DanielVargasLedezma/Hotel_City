@@ -17,6 +17,7 @@
 #include <string.h>
 #include "Hotel.h"
 
+
 extern void iniciarPrograma();
 
 extern void iniciarHotelInterfaz();
