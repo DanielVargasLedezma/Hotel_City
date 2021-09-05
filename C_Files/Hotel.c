@@ -44,6 +44,7 @@ int liberarHabitacionCedula(int ced)
             if (hotel->habitaciones[i][j].cliente->identificacion == ced && hotel->habitaciones[i][j].estado == 'O')
             {
                 hotel->habitaciones[i][j].estado = 'L';
+                free(hotel->habitaciones[i][j].cliente);
                 return 1;
             }
             else
@@ -62,13 +63,15 @@ Retorna 0 si la habitacion no esta ocupada
 extern double pagarHabitacion(int ced, int i, int j)
 {
     if (hotel->habitaciones[i][j].estado == 'O' && hotel->habitaciones[i][j].cliente->identificacion == ced)
-    {   
-        if(hotel->habitaciones[i][j].informacion && hotel->habitaciones[i][j].cliente){
+    {
+        if (hotel->habitaciones[i][j].informacion && hotel->habitaciones[i][j].cliente)
+        {
             double costoTotal = terminarReservacion(hotel->habitaciones[i][j].cliente, hotel->habitaciones[i][j].informacion);
-            free(hotel->habitaciones[i][j].cliente);
             free(hotel->habitaciones[i][j].informacion);
             return costoTotal;
-        }else{
+        }
+        else
+        {
             return -1;
         }
     }
@@ -78,6 +81,10 @@ extern double pagarHabitacion(int ced, int i, int j)
 void inicializarHabitaciones()
 {
     srand(time(NULL));
+
+    char PC[3] = "PC";
+    char SC[3] = "SC";
+    char TC[3] = "TC";
 
     for (int i = 0; i < hotel->row_count; i++)
     {
@@ -90,18 +97,15 @@ void inicializarHabitaciones()
 
             if (clasificador == 1)
             {
-                hotel->habitaciones[i][j].clasificacion[0] = 'P';
-                hotel->habitaciones[i][j].clasificacion[1] = 'C';
+                memcpy(hotel->habitaciones[i][j].clasificacion, PC, sizeof PC);
             }
             else if (clasificador == 2)
             {
-                hotel->habitaciones[i][j].clasificacion[0] = 'S';
-                hotel->habitaciones[i][j].clasificacion[1] = 'C';
+                memcpy(hotel->habitaciones[i][j].clasificacion, SC, sizeof SC);
             }
             else
             {
-                hotel->habitaciones[i][j].clasificacion[0] = 'T';
-                hotel->habitaciones[i][j].clasificacion[1] = 'C';
+                memcpy(hotel->habitaciones[i][j].clasificacion, TC, sizeof TC);
             }
 
             char num1[3];
