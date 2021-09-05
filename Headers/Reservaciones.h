@@ -18,7 +18,7 @@
 
 typedef struct Reservacion {
 
-    Informacion* informacion;
+    Informacion informacion;
 
     //[0] day - [1] month - [2] year - [3] hour - [4] minutes - [5] seconds
     int date_reserved[6];
@@ -26,7 +26,7 @@ typedef struct Reservacion {
     //[0] day - [1] month - [2] year - [3] hour - [4] minutes - [5] seconds
     int date_finished[6];
 
-    Cliente* cliente;
+    Cliente cliente;
 
     double costoReservacion;
 

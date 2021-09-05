@@ -16,15 +16,15 @@
 #include "Cliente.h"
 #include "Informacion.h"
 
-typedef struct Habitacion{
-    
+typedef struct Habitacion
+{
     char identificador[8];
     char estado;
     Cliente *cliente;
     Informacion *informacion;
     int numCamas; //Random each time
     char clasificacion[2];
-    
-}Habitacion;
+
+} Habitacion;
 
 #endif /* HABITACION_H */

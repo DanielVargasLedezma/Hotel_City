@@ -59,7 +59,15 @@ extern int comprobarSiReservadoEnNoche(int horaReserva);
 
 extern void calcularCostoTotalReservacion(Reservacion* data);
 
-extern void terminarReservacion(Cliente* cliente);
+/*
+Retorna el costo de la reservacion si cumple con las validaciones;
+Retorna -1 si la lista no esta inicializada o si esta vacia;
+Retorna 0 si no cumple con las validaciones
+*/
+extern double terminarReservacion(Cliente* cliente, Informacion * info);
+
+//Return 0 si son iguales, 1 si no lo son
+extern int compararSiEsigual(Reservacion* data, Cliente* cliente, Informacion* info);
 
 extern void freeList();
 

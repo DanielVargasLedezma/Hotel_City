@@ -23,6 +23,13 @@ extern void iniciarHotel(int n, int m);
 extern void inicializarHabitaciones();
 extern void setearHabitacionesLibre();
 
+/*
+Retorna el costo total si las validaciones son correctas;
+Retorna -1 si la habitacion ya ha sido pagada y esta pendiente de liberar;
+Retorna 0 si la habitacion no esta ocupada
+*/
+extern double pagarHabitacion(int ced, int i, int j);
+
 extern int liberarHabitacionCedula(int ced);
 extern int cantidadHabitacionesLibres();
 extern int cantidadHabitacionesEnMant();

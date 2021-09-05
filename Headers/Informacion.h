@@ -14,14 +14,14 @@
 #ifndef INFORMACION_H
 #define INFORMACION_H
 
-typedef struct Informacion{
-    
+typedef struct Informacion
+{
     int numOfAdults;
     int numOfKids;
     int numOfDays;
     //1 para todo incluido, 2 para no
     int typeOfInstance;
-    
-}Informacion;
+
+} Informacion;
 
 #endif /* INFORMACION_H */
