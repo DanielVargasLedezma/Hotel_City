@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>Headers/Archivos.h</itemPath>
       <itemPath>Headers/Cliente.h</itemPath>
       <itemPath>Headers/Contenedora.h</itemPath>
       <itemPath>Headers/DateGenerator.h</itemPath>
@@ -21,6 +22,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>C_Files/Archivos.c</itemPath>
       <itemPath>C_Files/Cliente.c</itemPath>
       <itemPath>C_Files/Contenedora.c</itemPath>
       <itemPath>C_Files/DateGenerator.c</itemPath>
@@ -54,6 +56,8 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="C_Files/Archivos.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="C_Files/Cliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Contenedora.c" ex="false" tool="0" flavor2="0">
@@ -73,6 +77,8 @@
       <item path="C_Files/Reservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Headers/Archivos.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Cliente.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -113,6 +119,8 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="C_Files/Archivos.c" ex="false" tool="0" flavor2="0">
+      </item>
       <item path="C_Files/Cliente.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/Contenedora.c" ex="false" tool="0" flavor2="0">
@@ -132,6 +140,8 @@
       <item path="C_Files/Reservaciones.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="C_Files/main.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="Headers/Archivos.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="Headers/Cliente.h" ex="false" tool="3" flavor2="0">
       </item>

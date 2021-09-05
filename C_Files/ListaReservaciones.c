@@ -21,6 +21,7 @@ void initList()
     {
         lista = (ListaReservacion *)malloc(sizeof(ListaReservacion));
     }
+    lista->cantidadNodos = 0;
 }
 
 void push(Reservacion *data)
@@ -56,6 +57,8 @@ void push(Reservacion *data)
 
         tmp->sig = nuevo;
     }
+
+    lista->cantidadNodos++;
 }
 
 int cantidadInfantesHoy()

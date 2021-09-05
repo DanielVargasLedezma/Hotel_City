@@ -19,24 +19,27 @@
 #include "DateGenerator.h"
 #include "Reservaciones.h"
 
-typedef struct Nodo {
+typedef struct Nodo
+{
 
-    Reservacion* data;
-    struct Nodo* sig;
+    Reservacion *data;
+    struct Nodo *sig;
 
-}Nodo;
+} Nodo;
 
-typedef struct ListaReservacion {
+typedef struct ListaReservacion
+{
 
-    Nodo* head;
+    Nodo *head;
+    int cantidadNodos;
 
-}ListaReservacion;
+} ListaReservacion;
 
-extern ListaReservacion* lista;
+extern ListaReservacion *lista;
 
 extern void initList();
 
-extern void push(Reservacion* data);
+extern void push(Reservacion *data);
 
 extern int cantidadAdultosHoy();
 
@@ -57,17 +60,17 @@ extern int compararFechaConHoy(Reservacion *data);
 //Return 0 si es reservado en la noche, 1 si no
 extern int comprobarSiReservadoEnNoche(int horaReserva);
 
-extern void calcularCostoTotalReservacion(Reservacion* data);
+extern void calcularCostoTotalReservacion(Reservacion *data);
 
 /*
 Retorna el costo de la reservacion si cumple con las validaciones;
 Retorna -1 si la lista no esta inicializada o si esta vacia;
 Retorna 0 si no cumple con las validaciones
 */
-extern double terminarReservacion(Cliente* cliente, Informacion * info);
+extern double terminarReservacion(Cliente *cliente, Informacion *info);
 
 //Return 0 si son iguales, 1 si no lo son
-extern int compararSiEsigual(Reservacion* data, Cliente* cliente, Informacion* info);
+extern int compararSiEsigual(Reservacion *data, Cliente *cliente, Informacion *info);
 
 extern void freeList();
 
