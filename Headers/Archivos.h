@@ -13,8 +13,7 @@
 
 #ifndef ARCHIVOS_H
 #define ARCHIVOS_H
-#include "Contenedora.h"
-#include "ListaReservaciones.h"
+#include "Hotel.h"
 
 extern void guardarLista(ListaReservacion *lista);
 
@@ -24,12 +23,20 @@ extern void guardarHabitaciones(Contenedora *contenedora);
 
 extern void escribirHabitacion(Habitacion *data, FILE *habitaciones);
 
-extern void cargarLista();
+/*
+Retorna -1 si el archivo esta vacio o si hubo un error al abrir el archivo;
+Retorna 1 si la carga se realizo con exito
+*/
+extern int cargarLista();
 
 extern void cargarNodo(Reservacion *data, FILE *reservaciones);
 
-extern void cargarHabitaciones(Contenedora *contenedora);
+/*
+Retorna -1 si el archivo esta vacio o si hubo un error al abrir el archivo;
+Retorna 1 si la carga se realizo con exito
+*/
+extern int cargarHabitaciones();
 
-extern Habitacion cargarHabitacion(Habitacion data, FILE *habitaciones);
+extern void cargarHabitacion(Habitacion *data, FILE *habitaciones);
 
 #endif /* ARCHIVOS_H */

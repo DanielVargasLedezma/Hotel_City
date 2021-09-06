@@ -36,7 +36,10 @@ void push(Reservacion *data)
         return;
     }
 
-    calcularCostoTotalReservacion(data);
+    if ((int)data->costoReservacion == 0)
+    {
+        calcularCostoTotalReservacion(data);
+    }
 
     Nodo *nuevo = (Nodo *)malloc(sizeof(Nodo));
     nuevo->data = data;
@@ -504,18 +507,21 @@ void freeList()
         return;
     }
 
-    Nodo *tmp = lista->head;
-
-    while (tmp)
+    if (lista->cantidadNodos > 0)
     {
-        if (tmp->data)
-        {
-            free(tmp->data);
-        }
+        Nodo *tmp = lista->head;
 
-        lista->head = lista->head->sig;
-        free(tmp);
-        tmp = lista->head;
+        while (tmp)
+        {
+            if (tmp->data)
+            {
+                free(tmp->data);
+            }
+
+            lista->head = lista->head->sig;
+            free(tmp);
+            tmp = lista->head;
+        }
     }
 
     free(lista);

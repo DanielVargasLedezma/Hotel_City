@@ -21,7 +21,6 @@
 
 typedef struct Nodo
 {
-
     Reservacion *data;
     struct Nodo *sig;
 
@@ -29,7 +28,6 @@ typedef struct Nodo
 
 typedef struct ListaReservacion
 {
-
     Nodo *head;
     int cantidadNodos;
 

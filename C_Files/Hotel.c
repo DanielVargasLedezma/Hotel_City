@@ -29,10 +29,6 @@ void iniciarHotel(int n, int m)
     {
         (hotel->habitaciones)[i] = malloc(m * sizeof(Habitacion));
     }
-
-    inicializarHabitaciones();
-
-    initList();
 }
 
 int liberarHabitacionCedula(int ced)

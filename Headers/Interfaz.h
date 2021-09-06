@@ -15,8 +15,7 @@
 #define INTERFAZ_H
 #include <stdio.h>
 #include <string.h>
-#include "Hotel.h"
-
+#include "Archivos.h"
 
 extern void iniciarPrograma();
 

@@ -15,10 +15,26 @@
 
 void iniciarPrograma()
 {
-
     iniciarHotelInterfaz();
+    inicializarHabitaciones();
+    
+    // if (cargarHabitaciones() == -1)
+    // {
+    //     iniciarHotelInterfaz();
+    //     inicializarHabitaciones();
+    // }
+
+    initList();
+
+    // if (cargarLista() == -1)
+    // {
+    //     initList();
+    // }
 
     menu();
+
+    guardarHabitaciones(hotel);
+    guardarLista(lista);
 
     liberarMemoria();
 }
@@ -48,7 +64,7 @@ void iniciarHotelInterfaz()
 
     if (n == m)
     {
-         n++;
+        n++;
     }
 
     iniciarHotel(n, m);
@@ -278,7 +294,6 @@ void cantidadHabitacionesLibresConNCamas(int numeroDeCamas)
     {
         printf(" No hay ninguna habitacion disponible \n");
     }
-
 }
 
 void menu()
@@ -286,8 +301,8 @@ void menu()
     int opcion = 0;
     char continuar[50];
     do
-    {   
-        
+    {
+
         printf("\e[1;1H\e[2J");
         printHabitaciones();
         printf("  ---------------Menu del Hotel_City---------------\n");
@@ -443,7 +458,7 @@ void menu()
             printf("\e[1;1H\e[2J");
             printf("\n   7. Liberar la habitacion por numero de cedula");
             printf("\n   Ingrese el numero de cedula: ");
-           
+
             if (scanf("%d", &ced) != 1)
             {
                 printf("\n   Usted digito una respuesta invalida");
